@@ -1,0 +1,748 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', 'sans-serif';
+}
+
+/* Ensuring no horizontal scrollbar */
+body,
+html {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* NAVBAR STYLES START */
+
+nav {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo i {
+  font-size: 25px;
+  padding-right: 5px;
+}
+
+.nav-logo h2 {
+  transition: 0.2s ease-in-out;
+}
+
+.nav-logo h2:hover {
+  transform: scale(1.1);
+}
+
+.nav-links ul {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-links ul li {
+  list-style: none;
+  font-size: 20px;
+}
+
+.nav-links ul li a {
+  text-decoration: none;
+  color: black;
+  transition: 0.2s ease-in-out;
+}
+
+.nav-links ul li a:hover {
+  color: aqua;
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+}
+
+.menu-icon i {
+  font-size: 30px;
+  color: black;
+}
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    /* Adjust if necessary based on the height of the navbar */
+    right: 0;
+    z-index: 1000;
+    /* Ensure it is above other content */
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Optional: shadow for better visibility */
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-links ul li {
+    font-size: 18px;
+  }
+
+  .menu-toggle:checked~.nav-links {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: flex;
+    cursor: pointer;
+    z-index: 1000;
+    /* Ensure it is above other content */
+  }
+}
+
+
+/* NAVBAR STYLES END */
+
+/* HERO SECTION STYLES START */
+main {
+  padding: 20px;
+}
+
+.hero-section {
+  height: calc(95vh - 60px);
+  /* Adjust '60px' to match the height of your navbar */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.hero-info {
+  flex: 1;
+  padding: 20px;
+}
+
+.hero-info h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero-info h1 span {
+  color: #ff6347;
+  /* Customize the highlight color */
+}
+
+.hero-info h4 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.hero-info p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  /* Space between paragraphs */
+}
+
+.social-media {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  /* Space before social media icons */
+}
+
+.social-media a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+  color: #0077b5;
+  /* Change to a color of your choice on hover */
+}
+
+.social-icon i {
+  font-size: 1.5rem;
+}
+
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  width: 80%;
+  /* Adjust the width to make the image smaller */
+  height: auto;
+  /* Maintain aspect ratio */
+  max-width: 320px;
+  /* Optional: set a maximum width */
+  border-radius: 30% 70% 57% 43% / 30% 30% 70% 70%;
+  /* Fancy border-radius */
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.2),
+    /* Main shadow */
+    0 0 25px rgba(0, 0, 0, 0.1),
+    /* Soft outer glow */
+    0 0 10px rgba(0, 0, 0, 0.05);
+  /* Subtle inner shadow */
+}
+
+
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    height: 100vh;
+    /* Full viewport height */
+    justify-content: center;
+    padding: 10px;
+  }
+
+  .hero-info {
+    order: 2;
+    /* Ensure hero-info comes after the image on mobile */
+    padding: 10px;
+  }
+
+  .hero-info h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-info h4 {
+    font-size: 1.5rem;
+  }
+
+  .hero-info p {
+    font-size: 1rem;
+  }
+
+  .hero-image {
+    order: 1;
+    /* Ensure hero-image comes before the info on mobile */
+    margin-top: 0;
+  }
+}
+
+
+/* HERO SECTION STYLES END */
+
+
+/* ABOUT US SECTION STYLES START */
+
+.about-us {
+  padding: 40px 20px;
+  background: #fff;
+  /* Solid background color */
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 20px auto;
+  /* Center the section horizontally with some margin */
+  text-align: left;
+  /* Align text to the left */
+}
+
+.about-us h5 {
+  color: #ff6347;
+  /* Customize color */
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: 300;
+  /* Lighter weight for emphasis */
+}
+
+.about-us h1 {
+  font-size: 6rem;
+  /* Make h1 larger */
+  margin-bottom: 20px;
+  line-height: 1;
+  color: #333;
+  /* Dark color for readability */
+  font-weight: 600;
+  /* Bold weight for prominence */
+  font-family: "Raleway", sans-serif;
+}
+
+.about-us p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
+  /* Medium gray for text */
+  margin: 0;
+}
+
+/* ABOUT US SECTION STYLES END */
+
+
+/* SKILLS AND ABILITIES SECTION STYLES START */
+.skills {
+  width: 90vw;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 20px;
+}
+
+.skills h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.skills span {
+  color: #ff6347;
+}
+
+.row1 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 220px;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.skill h2 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+  color: #333;
+}
+
+.skill i {
+  font-size: 3rem;
+  color: #333;
+}
+
+.skill progress {
+  width: 100%;
+  height: 10px;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.skill progress::-webkit-progress-bar {
+  background-color: #e0e0e0;
+  border-radius: 10px;
+}
+
+.skill progress::-webkit-progress-value {
+  background-color: #4caf50;
+  border-radius: 10px;
+}
+
+.skill progress::-moz-progress-bar {
+  background-color: #4caf50;
+  border-radius: 10px;
+}
+
+.skill progress::-ms-fill {
+  background-color: #4caf50;
+  border-radius: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .skills {
+    width: 95vw;
+  }
+
+  .row1 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skill {
+    width: 90%;
+    max-width: 300px;
+  }
+}
+
+/* SKILLS AND ABILITIES SECTION STYLES END */
+/* EDUACATION SECTION STYLES START */
+
+.education-section {
+  width: 100%;
+  padding: 45px 65px;
+}
+
+/* main.row {
+  display: grid;
+  grid-template-columns: 1fr;
+} */
+
+.col header.title {
+  font-family: Helvetica, Arial, sans-serif;
+  color: #11a372;
+  padding: 0 0 20px 30px;
+}
+
+.col .contents {
+  padding: 0 30px;
+  border-left: 2px solid #bababa;
+}
+
+.col .contents .box {
+  position: relative;
+  padding: 20px;
+  border: 1px solid #eaeaea;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: all 0.4s;
+  margin-bottom: 20px;
+}
+
+.col .contents .box:hover {
+  box-shadow: 0 3px 12px 0 #ccc;
+  border: 1px solid transparent;
+}
+
+.col .contents .box::before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  right: calc(100% + 22px);
+  top: 20px;
+  background-color: #11a372;
+  border: 2px solid white;
+}
+
+.box h4 {
+  position: relative;
+  color: #11a372;
+}
+
+.box h3 {
+  font-size: 19px;
+  padding: 10px 0 6px;
+  font-family: Helvetica, Arial, sans-serif;
+  color: #444;
+}
+
+.box p {
+  line-height: 1.2;
+  color: #666;
+  font-size: 17px;
+}
+
+@media (max-width: 768px) {
+  main.row {
+    grid-template-columns: 1fr;
+  }
+
+  .education-section {
+    padding: 20px;
+  }
+}
+
+/* EDUACATION SECTION STYLES END */
+
+
+/* PROJECT SECTION STYLES START */
+.project-section>h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+  text-decoration: underline;
+  color: #333;
+  transition: color 0.3s ease-in-out, transform 0.3s ease;
+}
+
+.project-section>h1:hover{
+  color: #11a372;
+  transform: scale(1.1);
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.project {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.project:hover {
+  transform: scale(1.05);
+}
+
+.project img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.project h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.project p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.project button {
+  background-color: #11a372;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.project button:hover {
+  background-color: #0d8c5b;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 5%;
+  }
+}
+
+/* PROJECT SECTION STYLES END */
+
+
+/* CONTACT SECTION STYLES START */
+.contact-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 40px 100px;
+}
+
+.contact-info {
+  flex: 1;
+  padding: 20px;
+  order: 1;
+}
+
+.contact-info h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #333;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.contact-info h4 {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #555;
+}
+
+.contact-info h4 b {
+  color: #11a372;
+}
+
+.contact-details p {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #555;
+}
+
+.contact-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  order: 1;
+}
+
+.contact-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.contact-image img:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+  }
+
+  .contact-info {
+      padding: 10px 0;
+      order: 2;
+      width: 100%;
+  }
+
+  .contact-info h1 {
+      font-size: 28px; /* Adjusted font size for h1 */
+      margin-bottom: 15px;
+  }
+
+  .contact-info h4 {
+      font-size: 16px; /* Adjusted font size for h4 */
+      margin: 5px 0;
+  }
+
+  .contact-details p {
+      font-size: 16px; /* Adjusted font size for paragraph */
+      margin: 5px 0;
+  }
+
+  .contact-image {
+      padding: 10px 0;
+      order: 1;
+      width: 100%;
+  }
+
+  .contact-image img {
+      max-width: 80%; /* Adjusted max-width for better fit */
+      height: auto;
+  }
+}
+
+
+/* CONTACT SECTION STYLES END */
+/* FOOTER SECTION STYLES STARTS */
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 50px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.footer-links a, .footer-social-media a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 16px;
+}
+
+.footer-links a:hover, .footer-social-media a:hover {
+  text-decoration: underline;
+}
+
+.footer-social-media i {
+  margin-right: 5px;
+}
+
+.footer-copyright {
+  font-size: 14px;
+  color: #bbb;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .footer-links a, .footer-social-media a {
+      display: block;
+      margin: 5px 0;
+  }
+}
+
+/* FOOTER SECTION STYLES END */
